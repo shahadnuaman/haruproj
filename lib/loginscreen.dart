@@ -128,7 +128,11 @@ class LoginScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             InkWell(
-              onTap: () => {Navigator.pushNamed(context, '/Registration')},
+              onTap: () => {
+                // Navigator.of(context).pushNamed('/Registration')
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil('/', (route) => false)
+              },
               child: const Text(
                 " سجل الان",
                 style: TextStyle(

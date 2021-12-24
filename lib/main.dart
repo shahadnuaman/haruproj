@@ -9,12 +9,12 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  MaterialPageRoute _buildRoute(RouteSettings settings, Widget builder) {
-    return new MaterialPageRoute(
-      settings: settings,
-      builder: (ctx) => builder,
-    );
-  }
+  // MaterialPageRoute _buildRoute(RouteSettings settings, Widget builder) {
+  //   return new MaterialPageRoute(
+  //     settings: settings,
+  //     builder: (ctx) => builder,
+  //   );
+  // }
 
   // This widget is the root of your application.
   @override

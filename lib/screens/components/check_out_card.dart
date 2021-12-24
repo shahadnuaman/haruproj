@@ -14,6 +14,7 @@ class CheckoutCard extends StatelessWidget {
 
   Widget _buildPopupDialog(BuildContext context) {
     return new AlertDialog(
+      backgroundColor: Color(0xFFC8C7C7),
       title: const Text('Popup example'),
       content: new Column(
         mainAxisSize: MainAxisSize.min,
@@ -28,7 +29,34 @@ class CheckoutCard extends StatelessWidget {
             Navigator.of(context).pop();
           },
           textColor: Theme.of(context).primaryColor,
-          child: const Text('Close'),
+          child: Center(
+              child: SizedBox(
+            height: 40,
+            width: 80,
+            child: Center(
+                child: TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color(0xFF458CAA),
+                      ////    primary: Color(0xffA0054F),
+                      ///  onSurface: Color(0xffA0054F),
+                      shape: new RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(10.0)),
+                    ),
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) =>
+                              _buildPopupDialog(context));
+                    },
+                    child: const Text(
+                      'تم',
+                      textDirection: TextDirection.rtl,
+                      style: const TextStyle(
+                          color: Color(0xffFFFFFF),
+                          fontFamily: 'Cairo',
+                          fontSize: 18),
+                    ))),
+          )),
         ),
       ],
     );
@@ -120,7 +148,12 @@ class CheckoutCard extends StatelessWidget {
                         shape: new RoundedRectangleBorder(
                             borderRadius: new BorderRadius.circular(10.0)),
                       ),
-                      onPressed: () => {_buildPopupDialog},
+                      onPressed: () {
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) =>
+                                _buildPopupDialog(context));
+                      },
                       child: const Text(
                         'حجز',
                         textDirection: TextDirection.rtl,
