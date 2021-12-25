@@ -1,4 +1,4 @@
-#Fri Dec 24 00:02:25 AST 2021
-base.0=C\:\\mobileapp\\harubom\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Sat Dec 25 06:03:17 AST 2021
+base.0=/Users/noamanmonther/DevProjects/haruproj/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
