@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
+
 import 'package:harubom/components/default_button.dart';
 import 'package:harubom/loginscreen.dart';
 import 'package:harubom/models/Product.dart';
+import 'package:harubom/models/productsmodel.dart';
 import 'package:harubom/screens/cart_screen.dart';
 
 import '../size_config.dart';
 import 'color_dots.dart';
 import 'product_description.dart';
-import 'top_rounded_container.dart';
 import 'product_images.dart';
+import 'top_rounded_container.dart';
 
 class Body extends StatelessWidget {
   final Product product;
+  Products? newProducts;
 
-  const Body({Key? key, required this.product}) : super(key: key);
+  Body({
+    Key? key,
+    required this.product,
+    this.newProducts,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
