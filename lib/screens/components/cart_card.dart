@@ -28,7 +28,7 @@ class CartCard extends StatelessWidget {
                 color: Color(0xFfffff),
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Image.asset(cart.product.images[0]),
+              child: Image.asset(cart.product.image),
             ),
           ),
         ),

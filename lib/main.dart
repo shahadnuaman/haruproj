@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:harubom/home.dart';
 import 'package:harubom/route.dart';
 import 'package:harubom/splashscreen.dart';
 

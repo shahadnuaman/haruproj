@@ -58,6 +58,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flat_icons_flutter">
+          <value>
+            <list>
+              <option value="$USER_HOME$/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/flat_icons_flutter-1.0.2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter">
           <value>
             <list>
@@ -237,6 +244,7 @@
       <root url="file://$USER_HOME$/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0/lib" />
       <root url="file://$USER_HOME$/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.4/lib" />
       <root url="file://$USER_HOME$/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/lib" />
+      <root url="file://$USER_HOME$/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/flat_icons_flutter-1.0.2/lib" />
       <root url="file://$USER_HOME$/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4/lib" />
       <root url="file://$USER_HOME$/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.22.0/lib" />
       <root url="file://$USER_HOME$/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/iconsax-0.0.8/lib" />

@@ -30,6 +30,10 @@ fake_async
 2.12
 file:///C:/Users/ACER/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/
 file:///C:/Users/ACER/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/lib/
+flat_icons_flutter
+2.1
+file:///C:/Users/ACER/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/flat_icons_flutter-1.0.2/
+file:///C:/Users/ACER/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/flat_icons_flutter-1.0.2/lib/
 flutter_lints
 2.12
 file:///C:/Users/ACER/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4/
@@ -38,6 +42,14 @@ flutter_svg
 2.12
 file:///C:/Users/ACER/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.22.0/
 file:///C:/Users/ACER/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.22.0/lib/
+http
+2.14
+file:///C:/Users/ACER/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.4/
+file:///C:/Users/ACER/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.4/lib/
+http_parser
+2.12
+file:///C:/Users/ACER/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0/
+file:///C:/Users/ACER/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0/lib/
 iconsax
 2.12
 file:///C:/Users/ACER/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/iconsax-0.0.8/

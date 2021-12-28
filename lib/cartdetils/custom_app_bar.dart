@@ -45,7 +45,7 @@ class CustomAppBar extends StatelessWidget {
               // ),
             ),
           ),
-          SizedBox(width: 100),
+          SizedBox(width: 110),
           Center(
             child: Text(
               "المنتج",

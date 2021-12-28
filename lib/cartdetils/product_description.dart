@@ -41,7 +41,7 @@ class ProductDescription extends StatelessWidget {
                     color: Color(0XFFA0054F)),
               ),
               SizedBox(
-                width: 30,
+                width: 40,
               ),
               IconButton(
                   onPressed: null,

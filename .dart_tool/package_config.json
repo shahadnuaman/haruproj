@@ -50,6 +50,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flat_icons_flutter",
+      "rootUri": "file:///C:/Users/ACER/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/flat_icons_flutter-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///C:/Users/ACER/Downloads/Compressed/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -70,6 +76,18 @@
     {
       "name": "flutter_test",
       "rootUri": "file:///C:/Users/ACER/Downloads/Compressed/flutter/packages/flutter_test",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///C:/Users/ACER/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///C:/Users/ACER/Downloads/Compressed/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -200,7 +218,7 @@
       "languageVersion": "2.15"
     }
   ],
-  "generated": "2021-12-23T21:00:24.683245Z",
+  "generated": "2021-12-26T19:00:55.915558Z",
   "generator": "pub",
   "generatorVersion": "2.15.0"
 }

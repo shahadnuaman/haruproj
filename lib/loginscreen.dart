@@ -1,15 +1,53 @@
 // ignore_for_file: unnecessary_const
 
+import 'dart:convert';
+// ignore: avoid_web_libraries_in_flutter
+///import 'dart:js';
+//import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:harubom/helpers.dart';
 import 'package:harubom/registration.dart';
+import 'package:http/http.dart' as http;
 
 import 'home.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   static String routeName = "/login";
 
   const LoginScreen({Key? key}) : super(key: key);
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController userController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  Future login(String username, password) async {
+    try {
+      var encodedBody = json.encode({
+        'username': username,
+        'password': password,
+      });
+
+      var response =
+          await http.post(Uri.parse('http://10.0.2.2:8000/api/auth/signin'),
+              // headers: {'Content-Type': 'application/json'},
+              body: encodedBody);
+      print(response.body);
+      if (response.statusCode == 200) {
+        var data = jsonDecode(response.body.toString());
+        print(data['token']);
+        print('Login successfully');
+        Navigator.pushNamed(context, '/home');
+      } else {}
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +64,7 @@ class LoginScreen extends StatelessWidget {
             width: 350,
             height: 54,
             child: TextField(
+              controller: userController,
               style: const TextStyle(fontFamily: 'Cairo'),
               textAlign: TextAlign.right,
               textDirection: TextDirection.rtl,
@@ -56,6 +95,7 @@ class LoginScreen extends StatelessWidget {
             width: 350,
             height: 54,
             child: TextField(
+              controller: passwordController,
               style: const TextStyle(fontFamily: 'Cairo', color: Colors.red),
               textAlign: TextAlign.right,
               textDirection: TextDirection.rtl,
@@ -109,7 +149,8 @@ class LoginScreen extends StatelessWidget {
                     borderRadius: new BorderRadius.circular(10.0)),
               ),
               //! TODO NEED TO FIX THIS LATTER
-              onPressed: () => hpush(context, Home()),
+              onPressed: () => login(userController.text.toString(),
+                  passwordController.text.toString()),
 
               // onPressed: () {
               //   Navigator.pushNamed(context, '/home');
@@ -130,8 +171,9 @@ class LoginScreen extends StatelessWidget {
             InkWell(
               onTap: () => {
                 // Navigator.of(context).pushNamed('/Registration')
-                Navigator.of(context)
-                    .pushNamedAndRemoveUntil('/', (route) => false)
+                // Navigator.of(context)
+                //     .pushNamedAndRemoveUntil('/', (route) => false)
+                hpush(context, RegistrationScreen())
               },
               child: const Text(
                 " سجل الان",

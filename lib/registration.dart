@@ -1,12 +1,56 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 import 'loginscreen.dart';
 
-class RegistrationScreen extends StatelessWidget {
+class RegistrationScreen extends StatefulWidget {
   static String routeName = "/Registration";
-  ////
-
   const RegistrationScreen({Key? key}) : super(key: key);
+
+  @override
+  State<RegistrationScreen> createState() => _RegistrationScreenState();
+}
+
+class _RegistrationScreenState extends State<RegistrationScreen> {
+  TextEditingController fullnameController = TextEditingController();
+  TextEditingController phonenoController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+  TextEditingController userController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmpasswordController = TextEditingController();
+
+  Future Registration(String fullname, phoneno, address, username, password,
+      confirmpassword) async {
+    try {
+      var encodedBody = json.encode({
+        'name': fullname,
+        'phone_number': phoneno,
+        'address1': address,
+        'username': username,
+        'password1': password,
+        'password2': confirmpassword,
+      });
+
+      var response =
+          await http.post(Uri.parse('http://10.0.2.2:8000/api/auth/signup'),
+              /////   headers: {'Content-Type': 'application/json'},
+              body: encodedBody);
+      print(response.body);
+      if (response.statusCode == 201) {
+        var data = jsonDecode(response.body.toString());
+        print(data['token']);
+        print('تم التسجيل بنجاح');
+
+        ///ss Navigator.pushNamed(context, LoginScreen());
+        Navigator.pushNamed(context, '/login');
+      } else {}
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,6 +68,7 @@ class RegistrationScreen extends StatelessWidget {
                 width: 350,
                 height: 54,
                 child: TextField(
+                  controller: userController,
                   style: const TextStyle(
                       fontFamily: 'Cairo', color: Color(0xffA0054F)),
                   textAlign: TextAlign.right,
@@ -54,6 +99,7 @@ class RegistrationScreen extends StatelessWidget {
                 width: 350,
                 height: 54,
                 child: TextField(
+                  controller: fullnameController,
                   style: const TextStyle(
                       fontFamily: 'Cairo', color: Color(0xffA0054F)),
                   textAlign: TextAlign.right,
@@ -85,6 +131,7 @@ class RegistrationScreen extends StatelessWidget {
                 width: 350,
                 height: 54,
                 child: TextField(
+                  controller: phonenoController,
                   style: const TextStyle(
                       fontFamily: 'Cairo', color: Color(0xffA0054F)),
                   textAlign: TextAlign.right,
@@ -115,6 +162,7 @@ class RegistrationScreen extends StatelessWidget {
                 width: 350,
                 height: 54,
                 child: TextField(
+                  controller: addressController,
                   style: const TextStyle(
                       fontFamily: 'Cairo', color: Color(0xffA0054F)),
                   textAlign: TextAlign.right,
@@ -145,6 +193,7 @@ class RegistrationScreen extends StatelessWidget {
                 width: 350,
                 height: 54,
                 child: TextField(
+                  controller: passwordController,
                   style: const TextStyle(
                       fontFamily: 'Cairo', color: Color(0xffA0054F)),
                   textAlign: TextAlign.right,
@@ -174,6 +223,7 @@ class RegistrationScreen extends StatelessWidget {
                 width: 350,
                 height: 54,
                 child: TextField(
+                  controller: confirmpasswordController,
                   style: const TextStyle(
                       fontFamily: 'Cairo', color: Color(0xffA0054F)),
                   textAlign: TextAlign.right,
@@ -211,7 +261,14 @@ class RegistrationScreen extends StatelessWidget {
                     shape: new RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(10.0)),
                   ),
-                  onPressed: () => {Navigator.pushNamed(context, '/login')},
+                  onPressed: () => Registration(
+                        fullnameController.text.toString(),
+                        phonenoController.text.toString(),
+                        addressController.text.toString(),
+                        userController.text.toString(),
+                        passwordController.text.toString(),
+                        confirmpasswordController.text.toString(),
+                      ),
                   child: const Text(
                     'تسجيل ',
                     style: const TextStyle(

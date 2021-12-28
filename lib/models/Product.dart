@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 class Product {
   final int id;
   final String title, description;
-  final List<String> images;
+  final String image;
+  final List<String> sizes;
   final List<Color> colors;
   final double price;
   final bool isFavourite, isPopular;
 
   Product(
       {required this.id,
-      required this.images,
+      required this.image,
+      required this.sizes,
       required this.colors,
 
       /// this.rating = 0.0,
@@ -26,11 +28,9 @@ class Product {
 List<Product> demoProducts = [
   Product(
     id: 1,
-    images: [
-      "images/Dragonball.png",
-      "images/Dragonball.png",
-      "images/Dragonball.png",
-    ],
+    image: "images/Dragonball.png",
+
+    sizes: ["XL", "L", "M"],
     colors: [
       Color(0xFFA0054F),
       Color(0xFF836DB8),
@@ -47,9 +47,9 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 2,
-    images: [
-      "images/naruto.png",
-    ],
+    image: "images/naruto.png",
+
+    sizes: ["M"],
     colors: [
       Color(0xFFA0054F),
       Color(0xFF836DB8),
@@ -64,9 +64,9 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 3,
-    images: [
-      "images/boy.png",
-    ],
+    image: "images/boy.png",
+
+    sizes: ["L"],
     colors: [
       Color(0xFFA0054F),
       Color(0xFF836DB8),
