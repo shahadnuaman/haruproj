@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:harubom/provider/products_provider.dart';
 import 'package:harubom/route.dart';
 import 'package:harubom/splashscreen.dart';
-import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider<ProductsProvider>(
-          create: (_) => ProductsProvider()),
-    ],
-    child: const MyApp(),
-  ));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
