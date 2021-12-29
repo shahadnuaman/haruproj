@@ -44,16 +44,16 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "fake_async",
-      "rootUri": "file:///Users/noamanmonther/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0",
+      "name": "dio",
+      "rootUri": "file:///Users/noamanmonther/.pub-cache/hosted/pub.dartlang.org/dio-4.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
-      "name": "flat_icons_flutter",
-      "rootUri": "file:///Users/noamanmonther/.pub-cache/hosted/pub.dartlang.org/flat_icons_flutter-1.0.2",
+      "name": "fake_async",
+      "rootUri": "file:///Users/noamanmonther/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0",
       "packageUri": "lib/",
-      "languageVersion": "2.1"
+      "languageVersion": "2.12"
     },
     {
       "name": "flutter",
@@ -218,7 +218,7 @@
       "languageVersion": "2.15"
     }
   ],
-  "generated": "2021-12-28T15:49:43.016756Z",
+  "generated": "2021-12-29T14:56:46.980366Z",
   "generator": "pub",
   "generatorVersion": "2.15.0"
 }

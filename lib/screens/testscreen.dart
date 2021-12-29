@@ -10,9 +10,7 @@ class TestScreen extends StatelessWidget {
     final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
 
     return Scaffold(
-      appBar: AppBar(
-        
-      ),
+      appBar: AppBar(),
       body: Center(
         child: Text(args.message),
       ),
