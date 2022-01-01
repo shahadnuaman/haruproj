@@ -1,14 +1,61 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:harubom/data/constants.dart';
 import 'package:harubom/home.dart';
+import 'package:http/http.dart' as http;
 
 import '../../helpers.dart';
 
-class CheckoutCard extends StatelessWidget {
+class CheckoutCard extends StatefulWidget {
   const CheckoutCard({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<CheckoutCard> createState() => _CheckoutCardState();
+}
+
+var data;
+
+class _CheckoutCardState extends State<CheckoutCard> {
+  Future order() async {
+    /// MyToast.pushToast(context: context, text: "test");
+
+    try {
+      // var encodedBody =
+      //     json.encode({"product_id": id, "qty": 1, "ordered": false});
+
+      var response = await http.post(
+        Uri.parse(workingUrl + 'api/order/create_order'),
+        headers: {
+          'accept': 'application/json',
+          'Authorization':
+              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwayI6ImZlZWNmZTZmLTAzNTEtNDc5MS04YzkzLTQyOWM5ODNjMGVhNSJ9.8Bzk9Gfw58XcwHKSC7QxV_X4Qf3Np8-3hATLj1RN0fA',
+          'Content-Type': 'application/json'
+        },
+        //body: encodedBody
+      );
+      print(response.body);
+      if (response.statusCode == 200) {
+        ///  MyToast.pushToast(context: context, text: "تم اضافة المنتج الى السلة");
+
+        var decodedJson = json.decode(response.body);
+        var jsonValue = json.decode(decodedJson['detail']);
+        print(jsonValue);
+        data = jsonDecode(response.body.toString());
+        // print(data['token']);
+        // print('Login successfully');
+
+        ///hpush('context', CartScreen());
+        ///Text("data");
+      } else {}
+    } catch (e) {
+      print(e.toString());
+    }
+  }
 
   Widget _buildPopupDialog(BuildContext context) {
     return Container(
@@ -20,8 +67,8 @@ class CheckoutCard extends StatelessWidget {
       child: AlertDialog(
         backgroundColor: Color(0xFFD7D2D2),
 
-        title: const Text(
-          'تم الحجز بنجاح',
+        title: Text(
+          data,
           textAlign: TextAlign.center,
           style: TextStyle(fontFamily: 'cairo'),
         ),
@@ -80,10 +127,7 @@ class CheckoutCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.0)),
                     ),
                     onPressed: () {
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) =>
-                              _buildPopupDialog(context));
+                      order();
                     },
                     child: InkWell(
                       child: const Text(

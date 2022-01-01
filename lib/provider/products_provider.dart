@@ -43,7 +43,7 @@ class ProductsProvider extends ChangeNotifier {
     // print(myUrl);
     try {
       var response = await Dio().get(
-        workingUrl + '/api/Services',
+        workingUrl + '/api/products',
       );
 
       print(response.data);

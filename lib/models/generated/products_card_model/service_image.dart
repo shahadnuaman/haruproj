@@ -1,16 +1,13 @@
 class ServiceImage {
-  String? id;
   String? image;
+  bool? isDefaultImage;
 
-  ServiceImage({this.id, this.image});
+  ServiceImage({this.image, this.isDefaultImage});
 
   factory ServiceImage.fromJson(Map<String, dynamic> json) => ServiceImage(
-        id: json['id'] as String?,
-        image: json['image'] as String?,
-      );
+      image: json['image'] as String?,
+      isDefaultImage: json['is_default_image'] as bool?);
 
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'image': image,
-      };
+  Map<String, dynamic> toJson() =>
+      {'image': image, 'isDefaultImage': isDefaultImage};
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:harubom/home.dart';
+import 'package:harubom/provider/add_to_cart.dart';
+import 'package:harubom/provider/increase_product.dart';
+import 'package:harubom/provider/item_provider.dart';
 import 'package:harubom/provider/products_provider.dart';
 import 'package:harubom/provider/search_provider.dart';
 import 'package:harubom/route.dart';
@@ -12,6 +15,11 @@ void main() {
       ChangeNotifierProvider<ProductsProvider>(
           create: (_) => ProductsProvider()),
       ChangeNotifierProvider<SearchProvider>(create: (_) => SearchProvider()),
+      ChangeNotifierProvider<AddToCartProvider>(
+          create: (_) => AddToCartProvider()),
+      ChangeNotifierProvider<IncreaseItemProvider>(
+          create: (_) => IncreaseItemProvider()),
+      ChangeNotifierProvider<ItemProvider>(create: (_) => ItemProvider()),
     ],
     child: const MyApp(),
   ));

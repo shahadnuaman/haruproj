@@ -14,7 +14,7 @@ class TopRoundedContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 320,
-      margin: EdgeInsets.only(top: 45),
+      margin: EdgeInsets.only(top: 65),
       padding: EdgeInsets.only(top: 20),
       width: double.infinity,
       decoration: BoxDecoration(

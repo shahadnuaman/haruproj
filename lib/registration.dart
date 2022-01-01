@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:harubom/data/constants.dart';
 import 'package:http/http.dart' as http;
 
 import 'loginscreen.dart';
@@ -33,10 +34,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         'password2': confirmpassword,
       });
 
-      var response =
-          await http.post(Uri.parse('http://10.0.2.2:8000/api/auth/signup'),
-              /////   headers: {'Content-Type': 'application/json'},
-              body: encodedBody);
+      var response = await http.post(Uri.parse(workingUrl + 'api/auth/signup'),
+          /////   headers: {'Content-Type': 'application/json'},
+          body: encodedBody);
       print(response.body);
       if (response.statusCode == 201) {
         var data = jsonDecode(response.body.toString());

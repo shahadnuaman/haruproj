@@ -110,7 +110,7 @@ class NavDrawer extends StatelessWidget {
                     color: Color(0xffFFFFFF),
                     fontSize: 19),
               ),
-              onTap: () => {Navigator.of(context).pop()},
+              onTap: () => {Navigator.pushNamed(context, '/login')},
             ),
             SizedBox(
               child: Padding(

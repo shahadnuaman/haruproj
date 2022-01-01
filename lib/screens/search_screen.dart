@@ -3,9 +3,11 @@ import 'package:harubom/components/search_bar.dart';
 import 'package:harubom/data/constants.dart';
 import 'package:harubom/detailsscreen.dart';
 import 'package:harubom/helpers.dart';
+import 'package:harubom/home.dart';
 import 'package:harubom/models/Product.dart';
 import 'package:harubom/models/generated/products_card_model/products_card_model.dart';
 import 'package:harubom/provider/search_provider.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
 
 class SearchScrean extends StatelessWidget {
@@ -16,13 +18,30 @@ class SearchScrean extends StatelessWidget {
     var length = 5;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: Color(0xffA0054F),
+          size: 35,
+        ),
+        actions: [
+          IconButton(
+              alignment: Alignment.center,
+              onPressed: () {
+                hpush(context, Home());
+              },
+              icon: Icon(
+                Icons.arrow_back,
+                color: Colors.transparent,
+              ))
+        ],
         bottom: PreferredSize(
-          preferredSize: Size(getSize(context).width, 65),
+          preferredSize: Size(getSize(context).width, 60),
           child: Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
+            padding: const EdgeInsets.only(bottom: 10.0),
             child: SearchBar(
               onChanged: (search) {
-                print(search);
+                /// print(search);
                 Provider.of<SearchProvider>(context, listen: false)
                     .search(search);
               },
@@ -34,6 +53,7 @@ class SearchScrean extends StatelessWidget {
         width: getSize(context).width,
         height: getSize(context).height,
         child: Column(
+          textDirection: TextDirection.rtl,
           children: [
             Expanded(child: Consumer<SearchProvider>(builder: (context, pr, _) {
               return ListView.builder(
@@ -45,9 +65,9 @@ class SearchScrean extends StatelessWidget {
                         onTap: () {
                           final SearchListModel e = pr.searchList[index];
                           final Product pro = Product(
-                              id: index,
-                              image: workingUrl + e.backgroundImage.toString(),
-                              sizes: ["XL", "L", "M"],
+                              id: e.id.toString(),
+                              image: workingUrl + e.images![0].image.toString(),
+                              sizes: [],
                               colors: [
                                 Color(0xFFA0054F),
                                 Color(0xFF836DB8),
@@ -56,7 +76,7 @@ class SearchScrean extends StatelessWidget {
                               ],
                               title: e.name.toString(),
                               price: index.toDouble(),
-                              description: description);
+                              description: e.description.toString());
 
                           Navigator.pushNamed(context, DetailsScreen.routeName,
                               arguments: ProductDetailsArguments(product: pro));
@@ -67,14 +87,15 @@ class SearchScrean extends StatelessWidget {
                           //     id: pr.searchList[index].id,
                           //   ));
                         },
-                        title: Text(pr.searchList[index].name),
+                        title: Text(pr.searchList[index].name.toString()),
                         leading: Container(
                           width: 80,
                           decoration: BoxDecoration(
                             // color: Colors.red,
                             image: DecorationImage(
                                 image: NetworkImage(workingUrl +
-                                    pr.searchList[index].backgroundImage),
+                                    pr.searchList[index].images![0].image
+                                        .toString()),
                                 fit: BoxFit.cover),
                             borderRadius: BorderRadius.circular(12),
                           ),
@@ -109,6 +130,7 @@ class ServiceWidget extends StatelessWidget {
       width: 150,
       // color: Colors.red,
       child: Column(
+        textDirection: TextDirection.rtl,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(
@@ -154,7 +176,7 @@ class ServiceWidget extends StatelessWidget {
                           '4.5',
                           style: TextStyle(color: Colors.white),
                         ),
-                        Icon(Icons.star, color: Colors.white)
+                        Icon(Icons.star, color: Colors.black)
                       ],
                     ),
                   ),
@@ -166,7 +188,7 @@ class ServiceWidget extends StatelessWidget {
             height: 15,
           ),
           Text(
-            model.name,
+            model.name.toString(),
             textAlign: TextAlign.left,
             style: TextStyle(
                 color: Color.fromRGBO(1, 15, 7, 1),

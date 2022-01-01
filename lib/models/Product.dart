@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Product {
-  final int id;
+  final String id;
   final String title, description;
   final String image;
   final List<String> sizes;
@@ -27,7 +27,7 @@ class Product {
 
 List<Product> demoProducts = [
   Product(
-    id: 1,
+    id: "1",
     image: "images/Dragonball.png",
 
     sizes: ["XL", "L", "M"],
@@ -46,7 +46,7 @@ List<Product> demoProducts = [
     isPopular: true,
   ),
   Product(
-    id: 2,
+    id: "2",
     image: "images/naruto.png",
 
     sizes: ["M"],
@@ -63,7 +63,7 @@ List<Product> demoProducts = [
     isPopular: true,
   ),
   Product(
-    id: 3,
+    id: "3",
     image: "images/boy.png",
 
     sizes: ["L"],

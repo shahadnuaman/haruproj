@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:harubom/helpers.dart';
 import 'package:harubom/home.dart';
 import 'package:harubom/loginscreen.dart';
+import 'package:harubom/screens/cart_screen.dart';
 
 ///import 'package:shop_app/screens/profile/profile_screen.dart';
 
@@ -42,10 +43,15 @@ class CustomBottomNavBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
-                  icon: SvgPicture.asset(
-                    "assets/icons/Chat bubble Icon.svg",
-                  ),
-                  onPressed: () => hpush(context, LoginScreen())),
+                icon: SvgPicture.asset(
+                  "assets/icons/Cart Icon.svg",
+                ),
+                onPressed: () => hpush(context, CartScreen()),
+                color: MenuState.cart == selectedMenu
+                    ? kPrimaryColor
+                    : inActiveIconColor,
+                //hpush(context, LoginScreen
+              ),
               IconButton(
                 icon: SvgPicture.asset(
                   "assets/icons/Shop Icon.svg",
@@ -56,14 +62,13 @@ class CustomBottomNavBar extends StatelessWidget {
                 onPressed: () => hpush(context, Home()),
               ),
               IconButton(
-                icon: SvgPicture.asset(
-                  "assets/icons/User Icon.svg",
-                  color: MenuState.profile == selectedMenu
-                      ? kPrimaryColor
-                      : inActiveIconColor,
-                ),
-                onPressed: () => hpush('context', Home()),
-              ),
+                  icon: SvgPicture.asset(
+                    "assets/icons/User Icon.svg",
+                    color: MenuState.profile == selectedMenu
+                        ? kPrimaryColor
+                        : inActiveIconColor,
+                  ),
+                  onPressed: () => {}),
             ],
           )),
     );

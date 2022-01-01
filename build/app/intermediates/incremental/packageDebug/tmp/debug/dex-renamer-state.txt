@@ -1,4 +1,4 @@
-#Wed Dec 29 19:06:20 AST 2021
-base.0=/Users/noamanmonther/DevProjects/haruproj/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+#Sat Jan 01 17:03:42 AST 2022
+base.0=C\:\\haruapp\\haruproj\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

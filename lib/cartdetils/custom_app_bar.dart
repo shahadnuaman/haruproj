@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:harubom/constants.dart';
+import 'package:harubom/helpers.dart';
+import 'package:harubom/home.dart';
 import 'package:harubom/models/Product.dart';
 
 //test
@@ -33,7 +35,7 @@ class CustomAppBar extends StatelessWidget {
                 backgroundColor: Colors.white,
                 padding: EdgeInsets.zero,
               ),
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => hpush(context, Home()),
               child: Icon(
                 Icons.arrow_back_outlined,
                 size: 22,

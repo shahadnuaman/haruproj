@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/noamanmonther/DevProjects/haruproj/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ky/values-ky.xml",
+            "outputFile": "C:\\haruapp\\haruproj\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ky\\values-ky.xml",
             "map": [
                 {
-                    "source": "/Users/noamanmonther/.gradle/caches/transforms-2/files-2.1/5f663b08eec19eef9a9d1af662d9025e/core-1.6.0/res/values-ky/values-ky.xml",
+                    "source": "C:\\Users\\ACER\\.gradle\\caches\\transforms-2\\files-2.1\\5f663b08eec19eef9a9d1af662d9025e\\core-1.6.0\\res\\values-ky\\values-ky.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

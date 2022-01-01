@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:harubom/helpers.dart';
+import 'package:harubom/home.dart';
 import 'package:harubom/models/Cart.dart';
+import 'package:harubom/models/items.dart';
 
 import 'components/body.dart';
 import 'components/check_out_card.dart';
@@ -19,10 +22,9 @@ class CartScreen extends StatelessWidget {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      leading: Icon(
-        Icons.arrow_back,
-        color: Color(0XFFA0054F),
-        size: 30,
+      leading: IconButton(
+        icon: Icon(Icons.arrow_back, color: Color(0XFFA0054F)),
+        onPressed: () => {hpush(context, Home())},
       ),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -42,14 +44,14 @@ class CartScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(" العناصر " "${demoCarts.length}",
-                    style: TextStyle(
-                        fontFamily: 'Cairo',
-                        fontSize: 15,
-                        color: Color(0XFF8F8888))
+                // Text(" العناصر " "${0}",
+                //     style: TextStyle(
+                //         fontFamily: 'Cairo',
+                //         fontSize: 15,
+                //         color: Color(0XFF8F8888))
 
-                    ///Theme.of(context).textTheme.caption,
-                    ),
+                //     ///Theme.of(context).textTheme.caption,
+                //     ),
                 SizedBox(
                   width: 10,
                 ),

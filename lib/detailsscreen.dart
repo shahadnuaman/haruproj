@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:harubom/cartdetils/body.dart';
 import 'package:harubom/cartdetils/custom_app_bar.dart';
+import 'package:harubom/models/generated/products_card_model/products_card_model.dart';
 
 import '../../models/Product.dart';
 // import 'components/body.dart';

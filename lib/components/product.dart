@@ -6,6 +6,7 @@ import 'package:harubom/enums.dart';
 import 'package:harubom/models/Product.dart';
 import 'package:harubom/models/generated/products_card_model/products_card_model.dart';
 import 'package:harubom/provider/products_provider.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
 
 // import 'size_config.dart';
@@ -31,12 +32,11 @@ class Products extends StatelessWidget {
           print(product.state);
           if (product.state == ScreenState.busy) {
             return Center(
-              child: Container(
-                width: getSize(context).width * 0.25,
-                height: 100,
-                color: Colors.amber,
-              ),
-            );
+                child: Container(
+              width: getSize(context).width * 0.25,
+              height: 100,
+              child: Image.asset('images/loading.png'),
+            ));
           }
           if (product.state == ScreenState.error) {
             return Center(
@@ -57,11 +57,13 @@ class Products extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: product.searchList.length,
                 itemBuilder: (context, index) {
+                  debugPrint('your id');
+                  debugPrint(product.searchList[index].id);
                   final ProductsCardModel e = product.searchList[index];
                   final Product pro = Product(
-                      id: index,
-                      image: workingUrl + e.backgroundImage.toString(),
-                      sizes: ["XL", "L", "M"],
+                      id: product.searchList[index].id.toString(),
+                      image: workingUrl + e.images!.first.image.toString(),
+                      sizes: [],
                       colors: [
                         Color(0xFFA0054F),
                         Color(0xFF836DB8),
@@ -69,8 +71,8 @@ class Products extends StatelessWidget {
                         Colors.white,
                       ],
                       title: e.name.toString(),
-                      price: index.toDouble(),
-                      description: description);
+                      price: e.price!.toDouble(),
+                      description: e.description.toString());
                   return Padding(
                     padding: (index == 0)
                         ? EdgeInsets.only(right: 16)

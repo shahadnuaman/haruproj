@@ -6,6 +6,7 @@ import 'dart:convert';
 //import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:harubom/data/constants.dart';
 import 'package:harubom/helpers.dart';
 import 'package:harubom/registration.dart';
 import 'package:http/http.dart' as http;
@@ -27,24 +28,23 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future login(String username, password) async {
     try {
-      Navigator.pushNamed(context, '/home');
+      /// Navigator.pushNamed(context, '/home');
 
-      // var encodedBody = json.encode({
-      //   'username': username,
-      //   'password': password,
-      // });
+      var encodedBody = json.encode({
+        'username': username,
+        'password': password,
+      });
 
-      // var response =
-      //     await http.post(Uri.parse('http://10.0.2.2:8000/api/auth/signin'),
-      //         // headers: {'Content-Type': 'application/json'},
-      //         body: encodedBody);
-      // print(response.body);
-      // if (response.statusCode == 200) {
-      //   var data = jsonDecode(response.body.toString());
-      //   print(data['token']);
-      //   print('Login successfully');
-      //   Navigator.pushNamed(context, '/home');
-      // } else {}
+      var response = await http.post(Uri.parse(workingUrl + 'api/auth/signin'),
+          // headers: {'Content-Type': 'application/json'},
+          body: encodedBody);
+      print(response.body);
+      if (response.statusCode == 200) {
+        var data = jsonDecode(response.body.toString());
+        print(data['token']);
+        print('Login successfully');
+        Navigator.pushNamed(context, '/home');
+      } else {}
     } catch (e) {
       print(e.toString());
     }
